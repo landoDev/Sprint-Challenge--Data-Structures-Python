@@ -1,5 +1,6 @@
 import time
 
+# ORIGINAL RUN TIME: 5.927138090133667 seconds
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
