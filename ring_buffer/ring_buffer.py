@@ -4,10 +4,17 @@ class RingBuffer:
         self.storage = []
 
     def append(self, item):
-        # see if storage is at capacity (use modulo to check)
-        # if it is, overwrite the eldest value
-        # else append the item
-        self.storage.append(item)
+        # first attempt was close
+        # see if storage is empty
+        if not self.storage:
+            self.storage.append(item)
+        elif len(self.storage) > 0:
+            buffer = len(self.storage) % self.capacity
+            if buffer == 0:
+                self.storage[0] = item
+                self.storage.pop()
+            else:
+                self.storage.append(item)
 
     def get(self):
         # return storage
