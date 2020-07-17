@@ -1,9 +1,12 @@
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.storage = []
 
     def append(self, item):
-        pass
+        # see if storage is at capacity (use modulo to check)
+        # if it is, overwrite the eldest value
+        # else append the item
 
     def get(self):
-        pass
+        # return storage
